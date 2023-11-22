@@ -2,7 +2,7 @@
 
 # Installer script for Adafruit PixelDust multiplane using
 # electrodragon.com "RGB LED Matrix Panel Drive Board For Raspberry Pi"
-# and rpi-rgb-led-matrix with an added mapper (Row-mapper)
+# and rpi-rgb-led-matrix with an added mappers
 
 CURRENT_PATH="$(pwd)/"
 RPI_RGB_LED_MATRIX_REPRO=https://github.com/AnAxNu/rpi-rgb-led-matrix/archive/refs/heads/master.zip
@@ -20,8 +20,7 @@ echo "- Install Adafruit PixelDust (multiplane) software"
 echo
 echo "EXISTING INSTALLATION, IF ANY, WILL BE OVERWRITTEN."
 echo
-echo -n "CONTINUE? [y/n] "
-read
+read -p "CONTINUE? [y/n]" REPLY < /dev/tty
 if [[ ! "$REPLY" =~ ^(yes|y|Y)$ ]]; then
 	echo "Canceled. "
 	exit 0
